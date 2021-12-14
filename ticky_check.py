@@ -10,7 +10,7 @@ error_dict = {}
 user_dict = {}
 
 #open syslog file in read only format
-f = open("/Users/paolosidera/Documents/python_projects/ticky_check_final_project/syslog.txt", "r")
+f = open("syslog.log", "r")
 
 #parse through the file using regex to match ticky
 for line in f:
