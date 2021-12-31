@@ -1,1 +1,3 @@
-A collection of coding projects I wrote while completing coursework for Google's IT Automation with Python professional certification on Coursera.
+# Google IT Automation with Python Professional Certificate
+
+A collection of coding projects I wrote in order to complete the Google IT Automation with Python professional certificate on the Coursera platform.
