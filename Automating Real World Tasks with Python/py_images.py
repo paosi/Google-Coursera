@@ -3,12 +3,10 @@
 import os
 from PIL import Image
 
-source = "/Users/paolosidera/Python_Projects/PIL/images/"
-#source = "/home/<student-id>/images/"
+source = "/home/<student-id>/images/"
 
 # Create a new directory for the edited images
-destination = "/Users/paolosidera/Python_Projects/PIL/opt/icons/"
-#destination = "/home/<student-id>/opt/icons/"
+destination = "/home/<student-id>/opt/icons/"
 
 if not os.path.exists(destination):
    os.makedirs(destination)
