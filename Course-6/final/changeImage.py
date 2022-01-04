@@ -6,6 +6,7 @@ from PIL import Image
 
 def edit_images(source):
 
+    # Creates the directory if it doesn't exist
     if not os.path.exists(destination):
         os.makedirs(destination)
 
