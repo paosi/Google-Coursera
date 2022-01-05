@@ -19,7 +19,10 @@ def fruit_upload(source):
         with open(source + file, "r") as f:
             i = 0
             for line in f:
-                fruits[key_list[i]] = line.strip()
+                if i == 1:
+                    fruits[key_list[i]] = int("".join(filter(str.isdigit, line.strip())))  #Converts number string to int
+                else:
+                    fruits[key_list[i]] = line.strip()
                 i += 1
             fruits[key_list[3]] = file
             #print(fruits)
