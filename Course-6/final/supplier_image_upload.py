@@ -3,8 +3,7 @@
 import requests
 import os
 
-#url  = "[linux-instance-IP-Address]/upload/"
-url = "https://httpbin.org/post"
+url  = "[linux-instance-IP-Address]/upload/"
 
 def post_image(source):
 
@@ -13,7 +12,7 @@ def post_image(source):
 
         # Sends a post request to the webserver only if the file is an image
         with open(source + img, "rb") as opened:
-            if ".jpg" in img:
+            if ".jpeg" in img:
                 r = requests.post(url, files = {"file": opened})
                 if not r.ok:
                     raise Exception("ERROR {x}".format(x = r.status_code))
@@ -23,6 +22,5 @@ def post_image(source):
                 print("File {x} not a valid JPEG file".format(x = img ))
   
 
-#source = "/supplier-data-images/"
-source = "/Users/paolosidera/Git/Google-Coursera/Course-6/final/img_edits/"
+source = "supplier-data/images/"
 post_image(source)

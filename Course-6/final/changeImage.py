@@ -6,10 +6,6 @@ from PIL import Image
 
 def edit_images(source):
 
-    # Creates the directory if it doesn't exist
-    if not os.path.exists(destination):
-        os.makedirs(destination)
-
     for img in os.listdir(source):
 
         try:
@@ -25,12 +21,9 @@ def edit_images(source):
             # Format: Change image format from .TIFF to .JPEG    
             # Convert to RGB mode (Cannot convert to JPEG unless this is done first)
             # Save as JPEG file in destination folder
-            new_img.convert("RGB").resize((600, 400)).save(destination + img + ".jpg", "JPEG")
+            new_img.convert("RGB").resize((600, 400)).save(source + img.replace(".tiff", ".jpeg"), "JPEG")
             print("Edited the image")
 
 
-# source = "~/supplier-data/images/"
-source = "/Users/paolosidera/Desktop/Coursera/Google_IT/PIL/images/"
-destination = "/Users/paolosidera/Desktop/Coursera/Google_IT/final/img_edits/"
-
+source = "supplier-data/images/"
 edit_images(source)

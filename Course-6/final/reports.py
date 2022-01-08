@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Below script was modified from an example script provided in an earlier module
+
 from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet

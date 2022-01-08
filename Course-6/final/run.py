@@ -4,7 +4,7 @@ import os
 import requests
 
 # Set endpoint url for file upload
-url = "https://httpbin.org/post"
+url = "<LINUX-IP-ADDRESS>/fruits"
 
 # Set the keys for the post object
 key_list = ["name", "weight", "description", "image_name"]
@@ -24,7 +24,7 @@ def fruit_upload(source):
                 else:
                     fruits[key_list[i]] = line.strip()
                 i += 1
-            fruits[key_list[3]] = file
+            fruits[key_list[3]] = file.replace(".txt", ".jpeg")
             #print(fruits)
         
         # Post the result to the web server
@@ -37,5 +37,5 @@ def fruit_upload(source):
             print("Successfully added {x} - Status code: {y}".format(x = file, y = r.status_code))
 
 
-source = "/Users/paolosidera/Git/Google-Coursera/Course-6/final/supplier-data/descriptions/"
+source = "supplier-data/descriptions/"
 fruit_upload(source)

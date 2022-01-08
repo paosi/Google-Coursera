@@ -3,10 +3,9 @@
 import psutil
 import shutil
 import socket
+import emails
 
 def health_check():
-
-    error_msg = ""
 
     #Report an error if CPU usage is over 80%
     amount_used = psutil.cpu_percent(1)
@@ -21,7 +20,7 @@ def health_check():
 
     #Report an error if available memory is less than 500MB
     memory = psutil.virtual_memory()
-    if memory.available/(1024*1025) < 500:
+    if memory.available/(1024*1024) < 500:
         error_msg = "Error - Available memory is less than 500MB"
 
     #Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
@@ -31,11 +30,23 @@ def health_check():
 
     return error_msg
 
-status = health_check()
 
-if status != "":
-    print("NOT GOOD")
-    sender = "automation@example.com"
-    receiver = "{x}@example.com".format(x = "<USER>")
-    subject = status
-    body = "Please check your system and resolve the issue as soon as possible."
+if __name__ == "__main__":
+
+    try:
+        status = health_check()  # Returns error_msg if one is present
+        print(status)
+        
+        # Format email
+        sender = "automation@example.com"
+        receiver = "<USER>@example.com")
+        subject = status
+        body = "Please check your system and resolve the issue as soon as possible."
+
+        # Generate error report and send email
+        message = emails.generate_error_report(sender, receiver, subject, body)
+        emails.send_email(message)
+        
+    except UnboundLocalError:  # If no error_msg is present, pass the test
+        print("System is healthy")
+
