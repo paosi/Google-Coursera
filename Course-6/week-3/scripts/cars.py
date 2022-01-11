@@ -91,7 +91,7 @@ def main(argv):
   email_report = ""
   for i in summary:
     email_report = email_report + i  + "\n"
-  e = generate_email("automation@example.com", "student-02-b2388b6dec25@example.com", "Sales summary for last month", email_report, "/tmp/cars.pdf")
+  e = generate_email("automation@example.com", "<USER>@example.com", "Sales summary for last month", email_report, "/tmp/cars.pdf")
   send_email(e)
 
   

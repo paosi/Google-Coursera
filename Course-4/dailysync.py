@@ -4,7 +4,7 @@ from multiprocessing import Pool
 import subprocess
 import os
 
-# My code only worked if I used the whole paths here. Replace "<studentID>" with your own
+# Replace "<studentID>" with your own
 src = "/home/<studentID>/data/prod/"
 dest = "/home/<studentID>/data/prod_backup/"
 

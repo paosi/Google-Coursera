@@ -3,7 +3,7 @@
 # Create an empty file to hold all the filenames that need to be changed
 > oldFiles.txt
 
-# Find the entries that contain the name Jane using grep and return the field that contains the filename
+# Find the entries in the directory that contain the name Jane using grep and return the field that contains the filename
 files=$(grep " jane " ../data/list.txt | cut -d " " -f 3)
 
 # Testing
