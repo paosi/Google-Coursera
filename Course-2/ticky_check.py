@@ -61,3 +61,13 @@ with open("error_message.csv", "w") as f:
 #testing
 print("USER DICTIONARY", user_dict)
 print("ERROR DICTIONARY", error_dict)
+
+
+
+"""
+Expected Results:
+
+
+USER DICTIONARY [('bobofet', {'INFO': 5, 'ERROR': 2}), ('butterpickle', {'INFO': 4, 'ERROR': 0}), ('meow1013', {'INFO': 5, 'ERROR': 3}), ('peter.newholland', {'INFO': 6, 'ERROR': 6}), ('rand.newholland', {'INFO': 0, 'ERROR': 5})]
+ERROR DICTIONARY [('Crap file', 8), ('The limit does not exist', 4), ('Virus', 2), ('Just super bad', 2)]
+"""
