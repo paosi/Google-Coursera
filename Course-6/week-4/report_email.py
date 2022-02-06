@@ -40,7 +40,7 @@ def body_text(source):
 
 source = "supplier-data/descriptions/"
 
-# Define parametes for generate_report()
+# Define parameters for generate_report()
 attachment = "/tmp/processed.pdf"
 title = "Processed Update on {x}".format(x = date.today().strftime("%B %d, %Y"))
 paragraph = body_text(source)
